@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block name_of_blog%}
+    <p>Красавчика</p>
+{%endblock%}
+
+
+{% block content %}
+<h2>Главная страница</h2>
+<h4>Добро пожаловать в мой блог</h4>
+<div class="leftcolumn">
+
+    {% for post in posts %}
+        <div class="card">
+            <h2> {{ post.title }} </h2>
+            <h5>{{ post.description }}, {{ post.date }}</h5>
+            <div class="fakeimg" style="height:200px;">Image</div>
+            <p>{{ post.content }}</p>
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
